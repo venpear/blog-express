@@ -2,8 +2,6 @@ var express = require('express');
 var User = require('../models/users');
 var router = express.Router();
 
-
-//
 router.route('/')
       .post(function(req, res) {
         var user = new User();
@@ -19,7 +17,7 @@ router.route('/')
       .get(function(req,res){
         User.find(function(err,user){
           if(err) res.send(err)
-          res.json(user);
+          res.json({code:1,msg:user});
         })
       })
 
@@ -48,7 +46,7 @@ router.route('/:id')
       .delete(function(req,res){
         User.remove({_id:req.params.id},function(err,user){
           if(err) res.send(err);
-          res.json({msg:'User Delete Success'});
+          res.json({code:1,msg:'User Delete Success'});
         })
 
       })
