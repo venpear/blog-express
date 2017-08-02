@@ -1,4 +1,4 @@
-## Blog后台api
+## express+mongodb+mongoose blog后台api
 * 环境
   > express + mongoose
   
